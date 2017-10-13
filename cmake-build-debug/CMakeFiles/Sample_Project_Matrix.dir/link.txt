@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/Sample_Project_Matrix.dir/main.cpp.o CMakeFiles/Sample_Project_Matrix.dir/Matrix.cpp.o  -o Sample_Project_Matrix 
