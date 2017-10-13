@@ -15,7 +15,7 @@ bool Matrix::areSameSize(const Matrix &matrix) {
     return (matrix.col == this->col && matrix.row == this->row);
 }
 
-bool Matrix::canMultiplie(const Matrix &matrix) {
+bool Matrix::canMultiply(const Matrix &matrix) {
     return (matrix.getCol() == this->row);
 }
 
@@ -29,6 +29,7 @@ Matrix *Matrix::operator+(const Matrix &matrix) {
         }
         return newM;
     }
+    std::cout << "Wrong Dimensions" << std::endl;
     return nullptr;
 }
 
@@ -42,11 +43,12 @@ Matrix *Matrix::operator-(const Matrix &matrix) {
         }
         return newM;
     }
+    std::cout << "Wrong Dimensions" << std::endl;
     return nullptr;
 }
 
 Matrix *Matrix::operator*(const Matrix &matrix) {
-    if (canMultiplie(matrix)) {
+    if (canMultiply(matrix)) {
         auto *newM = new Matrix(matrix.getCol(), this->row);
         for (unsigned int i = 0; i < matrix.getCol(); ++i)
             for (unsigned j = 0; j < this->row; ++j) {
@@ -61,6 +63,7 @@ Matrix *Matrix::operator*(const Matrix &matrix) {
         }
         return newM;
     }
+    std::cout << "Wrong Dimensions" << std::endl;
     return nullptr;
 }
 
@@ -71,6 +74,7 @@ void Matrix::printMatrix() {
         }
         std::cout << std::endl;
     }
+    std::cout << std::endl;
 }
 
 unsigned long Matrix::getCol() const {

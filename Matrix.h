@@ -23,7 +23,7 @@ public:
 
     bool areSameSize(const Matrix &matrix);
 
-    bool canMultiplie(const Matrix &matrix);
+    bool canMultiply(const Matrix &matrix);
 
     Matrix *operator+(const Matrix &matrix);
 

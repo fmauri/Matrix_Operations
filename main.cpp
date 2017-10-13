@@ -8,8 +8,20 @@
  * @return
  */
 int main() {
-    unsigned long x = 3, y = 3;
+    unsigned long x, y;
+    std::cout << "Please insert columns size 1st matrix: ";
+    std::cin >> x;
+    std::cout << std::endl;
+    std::cout << "Please insert rows size 1st matrix: ";
+    std::cin >> y;
+    std::cout << std::endl;
     auto *first = new Matrix(x, y);
+    std::cout << "Please insert columns size 1st matrix: ";
+    std::cin >> x;
+    std::cout << std::endl;
+    std::cout << "Please insert rows size 1st matrix: ";
+    std::cin >> y;
+    std::cout << std::endl;
     auto *second = new Matrix(x, y);
     for (unsigned int i = 0; i < first->getCol(); ++i) {
         for (unsigned int j = 0; j < first->getRow(); j++) {
@@ -17,17 +29,24 @@ int main() {
             second->matrix->at(i)[j] = j;
         }
     }
+    std::cout << "First matrix" << std::endl;
     first->printMatrix();
-    std::cout << std::endl;
+    std::cout << "Second matrix" << std::endl;
     second->printMatrix();
-    std::cout << std::endl;
     Matrix *result_sum = *first + *second;
-    result_sum->printMatrix();
-    std::cout << std::endl;
-    Matrix *result_sub = *result_sum - *first;
-    result_sub->printMatrix();
-    std::cout << std::endl;
+    if (result_sum != nullptr) {
+        std::cout << "Sum result" << std::endl;
+        result_sum->printMatrix();
+    }
+    Matrix *result_sub = *second - *first;
+    if (result_sub != nullptr) {
+        std::cout << "Subtraction result" << std::endl;
+        result_sub->printMatrix();
+    }
     Matrix *result_mul = *second * *first;
-    result_mul->printMatrix();
+    if (result_mul != nullptr) {
+        std::cout << "Multiplication result" << std::endl;
+        result_mul->printMatrix();
+    }
     return 0;
 }
