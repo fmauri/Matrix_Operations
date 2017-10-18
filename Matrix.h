@@ -15,8 +15,7 @@ public:
     unsigned long getCol() const;
 
     unsigned long getRow() const;
-    //std::vector<std::vector<int>> mat_num(, std::vector<int>(row));
-public:
+
     std::vector<std::vector<int>> *matrix;
 
     Matrix(unsigned long x, unsigned long y);
